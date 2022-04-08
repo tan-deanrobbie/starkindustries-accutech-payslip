@@ -4,7 +4,7 @@
 An internal RESTful API for AccuTech (Stark Industries) which handles all pay slip related processes including a monthly payslip generation.
 
 ## Endpoints
-### POST `/payslip/month` Generate Monthly Payslip
+### `POST` _/payslip/month_ Generate Monthly Payslip
 Receives a list of employee details: First name, Last name, Annual Salary, Super Rate, and Payment Start Date. Returns a list of the monthly payslip of the requested employee: Employee Details, Pay Period (start and end dates), Gross Income, Inome Tax, Net Income and Super Annuation.
 
 #### Sample Request Payload:
@@ -67,6 +67,11 @@ Receives a list of employee details: First name, Last name, Annual Salary, Super
     ]
 }
 ```
+## Running
+### Locally
+- Compile: `./mvnw compile`
+- Test: `./mvnw test`
+- Run application: `./mvnw spring-boot:run`
 
 ## Notes
 - This project uses `projectlombok` -- please install a plugin for it on your favorite IDE (e.g. Visual Studio Code - vscode-lombok, etc.)
