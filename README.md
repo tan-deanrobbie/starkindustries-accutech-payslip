@@ -1,5 +1,4 @@
 # Payslip Service
-### _For AccuTech (of Stark Industries)_
 
 ## Description
 An internal RESTful API for AccuTech (Stark Industries) which handles all pay slip related processes including a monthly payslip generation.
@@ -81,12 +80,3 @@ Receives a list of employee details: First name, Last name, Annual Salary, Super
 
 ## Future Improvements
 - For easier debugging and better incident support, we could integrate SumoLogic for easy access to log entries. Debug logs should also be added.
-
-
-::::::TODO
-X test validation
-- write test code
-- push to github
-- dockerize
-- deploy to ECR (AWS free tier)
-- explore github CI/CD
