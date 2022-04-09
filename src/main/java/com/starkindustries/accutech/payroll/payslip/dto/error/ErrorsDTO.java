@@ -11,7 +11,7 @@ import lombok.Getter;
 @Getter
 @Builder
 public class ErrorsDTO {
-    
+
     @Builder.Default
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private Date timestamp = new Date();

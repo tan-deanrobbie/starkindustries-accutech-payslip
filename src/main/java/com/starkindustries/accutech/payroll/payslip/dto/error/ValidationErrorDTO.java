@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public class ValidationErrorDTO extends ErrorDTO {
-    
+
     private String field;
     private String value;
 

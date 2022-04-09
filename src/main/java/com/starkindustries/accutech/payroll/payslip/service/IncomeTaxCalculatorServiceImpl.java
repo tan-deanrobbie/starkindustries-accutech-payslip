@@ -13,7 +13,7 @@ public class IncomeTaxCalculatorServiceImpl implements IncomeTaxCalculatorServic
     private float[] rate;
 
     @Override
-    public float calculateMonthly(int annualSalary){
+    public float calculateMonthly(int annualSalary) {
         return calculateAnnual(annualSalary) / 12;
     }
 
@@ -26,9 +26,9 @@ public class IncomeTaxCalculatorServiceImpl implements IncomeTaxCalculatorServic
         for (int i = 0; i < bracket.length; i++) {
             if (i < bracket.length - 1) {
                 // get the value from the gross income within the bracket range
-                range = bracket[i] - (i == 0 ? 0 : bracket[i-1]);
+                range = bracket[i] - (i == 0 ? 0 : bracket[i - 1]);
                 value -= range;
-                
+
                 if (value > 0) {
                     // value is exceeding range, calculate tax of range
                     tax += range * rate[i];
@@ -45,5 +45,5 @@ public class IncomeTaxCalculatorServiceImpl implements IncomeTaxCalculatorServic
 
         return tax;
     }
-    
+
 }

@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/payslip", produces = "application/json")
 public class PayslipController {
-    
+
     private static final Logger LOG = LogManager.getLogger(PayslipController.class);
 
     @Autowired

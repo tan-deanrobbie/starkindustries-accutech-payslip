@@ -5,6 +5,6 @@ import com.starkindustries.accutech.payroll.payslip.dto.PayslipDTO;
 
 public interface PayslipService {
 
-    public PayslipDTO generateMonthlyPayslip(EmployeeDTO employee);
+    PayslipDTO generateMonthlyPayslip(EmployeeDTO employee);
 
 }

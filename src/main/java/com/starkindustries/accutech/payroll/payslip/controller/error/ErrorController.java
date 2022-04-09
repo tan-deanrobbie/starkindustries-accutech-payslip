@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class ErrorController {
-    
+
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ErrorsDTO> handleConstraintViolationException(ConstraintViolationException exception) {
-        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations(); 
+        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
         List<ErrorDTO> validationErrorDTOs = violations.stream()
                 .map(v -> ValidationErrorDTO.builder()
                             .field(v.getPropertyPath().toString())

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class BasicAuthEntryPoint extends BasicAuthenticationEntryPoint {
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) 
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
             throws IOException {
 
         response.setContentType("application/json");

@@ -24,7 +24,7 @@ public class PayslipServiceImpl implements PayslipService {
     public PayslipDTO generateMonthlyPayslip(EmployeeDTO employee) {
         LOG.info("PayslipService | generateMonthlyPayslip | generating monthly payslip for employee {} {}",
                 employee.getFirstName(), employee.getLastName());
-        
+
         int grossIncome = calculateGrossIncome(employee.getAnnualSalary());
         int incomeTax = calculateIncomeTax(employee.getAnnualSalary());
 
@@ -46,7 +46,7 @@ public class PayslipServiceImpl implements PayslipService {
         cal.set(Calendar.DAY_OF_MONTH, 1);
         return cal.getTime();
     }
-    
+
     private Date getToDate(int paymentMonth) {
         // get last day of the month
         Calendar cal = Calendar.getInstance();
@@ -56,7 +56,7 @@ public class PayslipServiceImpl implements PayslipService {
     }
 
     private int calculateGrossIncome(int annualSalary) {
-        return getRoundValue(annualSalary/12);
+        return getRoundValue(annualSalary / 12);
     }
 
     private int calculateIncomeTax(int annualSalary) {

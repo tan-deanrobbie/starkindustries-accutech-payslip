@@ -1,8 +1,8 @@
 package com.starkindustries.accutech.payroll.payslip.service;
 
 public interface IncomeTaxCalculatorService {
-    
-    public float calculateMonthly(int annualSalary);
-    public float calculateAnnual(int annualSalary);
+
+    float calculateMonthly(int annualSalary);
+    float calculateAnnual(int annualSalary);
 
 }

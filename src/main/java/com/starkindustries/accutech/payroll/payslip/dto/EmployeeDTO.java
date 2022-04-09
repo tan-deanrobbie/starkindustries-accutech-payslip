@@ -14,7 +14,7 @@ import lombok.Getter;
 @Getter
 @Builder(toBuilder = true)
 public class EmployeeDTO {
-    
+
     private String firstName;
     private String lastName;
 
