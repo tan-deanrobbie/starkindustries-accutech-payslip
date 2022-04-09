@@ -1,7 +1,7 @@
 name: Run Tests
 on:
   workflow_dispatch: # manually triggering action
-  pull-request:
+  pull_request:
     branches: [ master, develop ]
   push:
     branches: [ develop, feature/* ]
