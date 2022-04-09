@@ -67,11 +67,19 @@ Receives a list of employee details: First name, Last name, Annual Salary, Super
     ]
 }
 ```
-## Running
+## Running/Deployment
 ### Locally
-- Compile: `./mvnw compile`
-- Test: `./mvnw test`
-- Run application: `./mvnw spring-boot:run`
+- Test: `./mvnw clean test`
+- Run application: `./mvnw clean spring-boot:run`
+
+### Production
+- Create release branch then create PR to master.
+    - This triggers _"Run Tests"_ workflow which runs the checkstyle plugin and the unit tests.
+- If build/test succeeds, merge PR.
+- Create tag using maven project version (e.g. 1.0.1).
+- Create release in GitHub using tag.
+    - This triggers _"Release and Deploy to ECS"_ workflow which builds the application and a Docker image then pushes to _docker.io/tan-deanrobbie_. If previous step is successful, image would then be deployed to an EC2 instance in Sydney (ap-southeast-2) through an ECS task/cluster.
+_(See `.github/workflows` for more details.)_
 
 ## Notes
 - This project uses `projectlombok` -- please install a plugin for it on your favorite IDE (e.g. Visual Studio Code - vscode-lombok, etc.)
