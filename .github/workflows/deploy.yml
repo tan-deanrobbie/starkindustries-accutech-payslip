@@ -47,8 +47,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set env variable
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/*}" >> $GITHUB_ENV
+      - name: Set image name var
+        id: image-name-var
+        run: echo ::set-output name=docker_image::"docker.io/tandeanrobbie/payslip-service:$(echo ${GITHUB_REF#refs/tags/*})"
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -61,7 +62,7 @@ jobs:
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
           container-name: ${{ env.CONTAINER_NAME }}
-          image: docker.io/tandeanrobbie/payslip-service:$RELEASE_VERSION
+          image: ${{ steps.image-name-var.outputs.docker_image }}
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
