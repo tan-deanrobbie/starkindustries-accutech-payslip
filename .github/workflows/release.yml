@@ -1,6 +1,7 @@
 name: Release and Deploy to ECS
 on:
   release:
+    types: [published]
 
 env:
   AWS_REGION: ap-southeast-2
